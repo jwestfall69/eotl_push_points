@@ -6,7 +6,7 @@
 #include <regex>
 
 #define PLUGIN_AUTHOR  "ack"
-#define PLUGIN_VERSION "0.1"
+#define PLUGIN_VERSION "0.2"
 
 public Plugin myinfo = {
 	name = "eotl_push_points",
@@ -48,7 +48,7 @@ public Action CheckRateTimer(Handle timer, int junk) {
 	float orig_rate = GetEntPropFloat(entity, Prop_Data, "m_flPartialCapturePointsRate");
 	if(orig_rate != new_rate) {
 		SetEntPropFloat(entity, Prop_Data, "m_flPartialCapturePointsRate", new_rate);
-		LogMessage("Adjusted Cap Point Rate %.1f -> %.1f", orig_rate, new_rate);
+		LogMessage("Adjusted Cap Point Rate %.3f -> %.3f", orig_rate, new_rate);
 	}
 	return Plugin_Continue;
 }
